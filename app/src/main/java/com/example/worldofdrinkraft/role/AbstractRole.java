@@ -3,6 +3,7 @@ package com.example.worldofdrinkraft.role;
 import android.util.Log;
 
 import com.example.worldofdrinkraft.language.Language;
+import com.example.worldofdrinkraft.language.LanguageType;
 
 abstract public class AbstractRole
 {
@@ -19,9 +20,9 @@ abstract public class AbstractRole
         return getType().equals(type);
     }
 
-    final public String getLabel(Language language)
+    final public String getLabel()
     {
-        switch(language)
+        switch(Language.getInstance().getLanguageType())
         {
             case ENGLISH:
                 return getEnglishLabel();
@@ -30,13 +31,13 @@ abstract public class AbstractRole
                 return getFrenchLabel();
         }
 
-        Log.e("AbstractRole::label", "Unset language");
+        Log.e("AbstractRole::label", Language.UNSET_LANGUAGE_ERROR_MESSAGE);
         return null;
     }
 
-    final public String getRule(Language language)
+    final public String getRule()
     {
-        switch(language)
+        switch(Language.getInstance().getLanguageType())
         {
             case ENGLISH:
                 return getEnglishRule();
@@ -45,7 +46,7 @@ abstract public class AbstractRole
                 return getFrenchRule();
         }
 
-        Log.e("AbstractRole::rule", "Unset language");
+        Log.e("AbstractRole::rule", Language.UNSET_LANGUAGE_ERROR_MESSAGE);
         return null;
     }
 }
