@@ -12,23 +12,9 @@ public class Business implements IBusiness
 {
     private List<Player> _playerList;
 
-    static IBusiness _iBusiness = null;
-
     public Business(List<Player> playerList)
     {
         setPlayerList(playerList);
-    }
-
-    public static IBusiness getInstance()
-    {
-        if(_iBusiness == null)
-        {
-            _iBusiness = new Business(
-                    null
-            );
-        }
-
-        return _iBusiness;
     }
 
     @Override
