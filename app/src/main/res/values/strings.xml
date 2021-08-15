@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">World of Drinkraft</string>
+    <string name="player_setup_label">Players setup</string>
 </resources>
