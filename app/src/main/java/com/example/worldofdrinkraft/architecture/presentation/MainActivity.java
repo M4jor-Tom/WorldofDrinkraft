@@ -16,5 +16,22 @@ public class MainActivity extends AppCompatActivity
     {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        MaterialButton playerListSetupButton = (MaterialButton)findViewById(R.id.main_button_players);
+
+        playerListSetupButton.setOnClickListener(
+                new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v)
+                    {
+                        Intent playersSetupIntent = new Intent(
+                                MainActivity.this,
+                                PlayersSetupActivity.class
+                        );
+
+                        startActivity(playersSetupIntent);
+                    }
+                }
+        );
     }
 }
