@@ -1,5 +1,9 @@
 package com.example.worldofdrinkraft.architecture.business;
 
+import com.example.worldofdrinkraft.player.Player;
+
+import java.util.ArrayList;
+
 abstract public class IBusinessContainer
 {
     private static IBusiness _iBusiness;
@@ -9,7 +13,7 @@ abstract public class IBusinessContainer
         if(_iBusiness == null)
         {
             _iBusiness = new Business(
-                    null
+                    new ArrayList<Player>()
             );
         }
 
