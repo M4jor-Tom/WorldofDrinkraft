@@ -34,13 +34,12 @@
         </com.google.android.material.button.MaterialButton>
     </LinearLayout>
 
-    <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:gravity="center">
+    <ListView
+        android:id="@+id/player_setup_player_list_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
 
-    </LinearLayout>
+    </ListView>
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/player_setup_randomize_roles"
