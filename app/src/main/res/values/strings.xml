@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">WoD</string>
+    <string name="player_setup_label">Players setup</string>
+    <string name="player_setup_name_hint">Player Name</string>
+    <string name="main_button_players">Set Players</string>
+    <string name="player_setup_add_player">Add Player</string>
+    <string name="player_setup_randomize_roles">Randomize Roles</string>
 </resources>

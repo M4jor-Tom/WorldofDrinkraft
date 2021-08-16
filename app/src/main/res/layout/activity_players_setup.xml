@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center">
+
+        <EditText
+            android:id="@+id/player_setup_name"
+            android:autofillHints=""
+            android:inputType="text"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:hint="@string/player_setup_name_hint">
+        </EditText>
+
+        <Spinner
+            android:id="@+id/player_setup_role_spinner"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent">
+
+        </Spinner>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/player_setup_add_player"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="@string/player_setup_add_player">
+        </com.google.android.material.button.MaterialButton>
+    </LinearLayout>
+
+    <ListView
+        android:id="@+id/player_setup_player_list_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+    </ListView>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/player_setup_randomize_roles"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/player_setup_randomize_roles">
+
+    </com.google.android.material.button.MaterialButton>
+</LinearLayout>
