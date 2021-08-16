@@ -20,6 +20,11 @@ abstract public class AbstractRole
         return getType().equals(type);
     }
 
+    final public String toString()
+    {
+        return getLabel();
+    }
+
     final public String getLabel()
     {
         switch(Language.getInstance().getLanguageType())
