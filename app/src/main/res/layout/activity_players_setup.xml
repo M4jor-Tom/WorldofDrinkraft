@@ -17,8 +17,14 @@
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:hint="@string/player_setup_name_hint">
-
         </EditText>
+
+        <Spinner
+            android:id="@+id/player_setup_role_spinner"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent">
+
+        </Spinner>
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/player_setup_add_player"
