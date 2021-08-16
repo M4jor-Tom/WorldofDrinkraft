@@ -16,6 +16,17 @@ public class Player
         setRole(role);
     }
 
+    @Override
+    public boolean equals(Object player)
+    {
+        return getName().equalsIgnoreCase(((Player)player).getName());
+    }
+
+    public String toString()
+    {
+        return getName() + " - " + getRole();
+    }
+
     private void setName(String name)
     {
         _name = name;

@@ -12,7 +12,7 @@ public class ExistentPlayerException extends Exception
         switch(Language.getInstance().getLanguageType())
         {
             case ENGLISH:
-                return "Player already exist";
+                return "Player already exists";
 
             case FRENCH:
                 return "Le joueur existe déjà";
