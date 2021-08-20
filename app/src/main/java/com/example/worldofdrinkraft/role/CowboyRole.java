@@ -9,6 +9,18 @@ public class CowboyRole extends AbstractRole
     }
 
     @Override
+    protected Boolean isNormallyUnique()
+    {
+        return Boolean.valueOf(false);
+    }
+
+    @Override
+    protected Boolean isNormallyInGroup()
+    {
+        return Boolean.valueOf(true);
+    }
+
+    @Override
     protected String getEnglishLabel()
     {
         return "cowboy";

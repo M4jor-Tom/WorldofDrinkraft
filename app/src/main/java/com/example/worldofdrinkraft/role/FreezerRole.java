@@ -9,6 +9,18 @@ public class FreezerRole extends AbstractRole
     }
 
     @Override
+    protected Boolean isNormallyUnique()
+    {
+        return Boolean.valueOf(false);
+    }
+
+    @Override
+    protected Boolean isNormallyInGroup()
+    {
+        return Boolean.valueOf(false);
+    }
+
+    @Override
     protected String getEnglishLabel()
     {
         return "freezer";
