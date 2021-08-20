@@ -31,8 +31,8 @@ public class RoleFactory
     {
         List<AbstractRole> roleList = new ArrayList<>();
 
-        roleList.add(new CowboyRole());
-        roleList.add(new FreezerRole());
+        for(RoleType roleType: RoleType.values())
+            roleList.add(RoleFactory.getRoleByType(roleType));
 
         return roleList;
     }
