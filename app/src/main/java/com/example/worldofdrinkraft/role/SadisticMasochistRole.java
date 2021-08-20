@@ -23,13 +23,13 @@ public class SadisticMasochistRole extends AbstractRole
     @Override
     protected String getEnglishLabel()
     {
-        return "Sadistic Masochist";
+        return "sadistic masochist";
     }
 
     @Override
     protected String getFrenchLabel()
     {
-        return "Sado-Maso";
+        return "sado-maso";
     }
 
     @Override
