@@ -17,7 +17,7 @@ abstract public class AbstractRole
 
     final public Boolean isOfType(RoleType type)
     {
-        return getType().equals(type);
+        return Boolean.valueOf(getType().equals(type));
     }
 
     final public String toString()
