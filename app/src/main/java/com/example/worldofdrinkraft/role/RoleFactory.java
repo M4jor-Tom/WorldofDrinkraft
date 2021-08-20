@@ -11,11 +11,29 @@ public class RoleFactory
     {
         switch(roleType)
         {
+            case CITIZEN_TYPE:
+                return new CitizenRole();
+
             case COWBOY_TYPE:
                 return new CowboyRole();
 
             case FREEZER_TYPE:
                 return new FreezerRole();
+
+            case GYPSY_TYPE:
+                return new GypsyRole();
+
+            case NINJA_TYPE:
+                return new NinjaRole();
+
+            case ROMAN_TYPE:
+                return new RomanRole();
+
+            case SADISTIC_MASOCHIST_TYPE:
+                return new SadisticMasochistRole();
+
+            case VIKING_TYPE:
+                return new VikingRole();
         }
 
         Log.e("RoleFactory::roleByType", "Unset role");

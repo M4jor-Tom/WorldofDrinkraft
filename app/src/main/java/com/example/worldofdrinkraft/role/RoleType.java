@@ -8,7 +8,13 @@ import java.util.Random;
 public enum RoleType
 {
     COWBOY_TYPE,
-    FREEZER_TYPE;
+    FREEZER_TYPE,
+    VIKING_TYPE,
+    NINJA_TYPE,
+    SADISTIC_MASOCHIST_TYPE,
+    ROMAN_TYPE,
+    GYPSY_TYPE,
+    CITIZEN_TYPE;
 
     private static final List<RoleType> VALUES =
             Collections.unmodifiableList(Arrays.asList(values()));
