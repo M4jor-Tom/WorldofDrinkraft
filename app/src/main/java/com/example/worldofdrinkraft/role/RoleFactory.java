@@ -54,4 +54,26 @@ public class RoleFactory
 
         return roleList;
     }
+
+    public static List<AbstractRole> getUniqueRoleList()
+    {
+        List<AbstractRole> uniqueRoleList = new ArrayList<>();
+
+        for(AbstractRole role: getAllRoles())
+            if(role.isUnique())
+                uniqueRoleList.add(role);
+
+        return uniqueRoleList;
+    }
+
+    public static List<AbstractRole> getInGroupRoleList()
+    {
+        List<AbstractRole> groupRoleList = new ArrayList<>();
+
+        for(AbstractRole role: getAllRoles())
+            if(role.isInGroup())
+                groupRoleList.add(role);
+
+        return groupRoleList;
+    }
 }
