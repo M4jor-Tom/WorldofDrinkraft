@@ -9,7 +9,7 @@ public class NonexistentPlayerException extends Exception
     @Override
     public String getMessage()
     {
-        switch(LanguageManager.getInstance().getLanguageType())
+        switch(LanguageManager.getInstance().getLanguage())
         {
             case ENGLISH:
                 return "Player does not exist";

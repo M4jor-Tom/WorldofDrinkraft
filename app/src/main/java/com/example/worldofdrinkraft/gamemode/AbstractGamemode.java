@@ -13,7 +13,7 @@ abstract public class AbstractGamemode
 
     final public String getLabel()
     {
-        switch(LanguageManager.getInstance().getLanguageType())
+        switch(LanguageManager.getInstance().getLanguage())
         {
             case ENGLISH:
                 return getEnglishLabel();

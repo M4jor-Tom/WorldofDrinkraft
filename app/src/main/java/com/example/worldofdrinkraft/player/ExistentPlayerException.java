@@ -9,7 +9,7 @@ public class ExistentPlayerException extends Exception
     @Override
     public String getMessage()
     {
-        switch(LanguageManager.getInstance().getLanguageType())
+        switch(LanguageManager.getInstance().getLanguage())
         {
             case ENGLISH:
                 return "Player already exists";

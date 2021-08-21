@@ -13,7 +13,7 @@ abstract public class AbstractEvent
 
     final public String getText()
     {
-        switch(LanguageManager.getInstance().getLanguageType())
+        switch(LanguageManager.getInstance().getLanguage())
         {
             case ENGLISH:
                 return getEnglishText();

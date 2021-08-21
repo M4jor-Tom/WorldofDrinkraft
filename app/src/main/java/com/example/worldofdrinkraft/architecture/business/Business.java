@@ -6,7 +6,7 @@ import com.example.worldofdrinkraft.gamemode.GamemodeType;
 import com.example.worldofdrinkraft.language.LanguageManager;
 import com.example.worldofdrinkraft.player.ExistentPlayerException;
 import com.example.worldofdrinkraft.player.NonexistentPlayerException;
-import com.example.worldofdrinkraft.language.LanguageType;
+import com.example.worldofdrinkraft.language.Language;
 import com.example.worldofdrinkraft.player.Player;
 
 import java.util.List;
@@ -23,15 +23,15 @@ public class Business implements IBusiness
     }
 
     @Override
-    public void setLanguage(LanguageType languageType)
+    public void setLanguage(Language language)
     {
-        LanguageManager.getInstance().setLanguageType(languageType);
+        LanguageManager.getInstance().setLanguage(language);
     }
 
     @Override
-    public LanguageType getLanguage()
+    public Language getLanguage()
     {
-        return LanguageManager.getInstance().getLanguageType();
+        return LanguageManager.getInstance().getLanguage();
     }
 
     @Override

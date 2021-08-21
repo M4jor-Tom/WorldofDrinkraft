@@ -1,6 +1,6 @@
 package com.example.worldofdrinkraft.language;
 
-public enum LanguageType
+public enum Language
 {
     ENGLISH,
     FRENCH;
