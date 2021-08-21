@@ -30,6 +30,33 @@ public class RoleFactory
         return RoleFactory.getRoleByType(RoleType.randomRoleType());
     }
 
+    public static AbstractRole getRandomCountConstraintlessRole()
+    {
+        return getCountConstraintlessRoleList().get(
+                _random.nextInt(
+                        getCountConstraintlessRoleList().size()
+                )
+        );
+    }
+
+    public static AbstractRole getRandomUniqueRole()
+    {
+        return getUniqueRoleList().get(
+                _random.nextInt(
+                        getUniqueRoleList().size()
+                )
+        );
+    }
+
+    public static AbstractRole getRandomInGroupRole()
+    {
+        return getInGroupRoleList().get(
+                _random.nextInt(
+                        getInGroupRoleList().size()
+                )
+        );
+    }
+
     public static List<AbstractRole> getAllRoles()
     {
         if(getRoleList() == null)
