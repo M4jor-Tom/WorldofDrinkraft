@@ -39,6 +39,11 @@ abstract public class AbstractRole
                 && !IBusinessContainer.getInstance().gamemodeTypeIs(GamemodeType.LIMITLESS_TYPE);
     }
 
+    final public Boolean hasCountConstraint()
+    {
+        return isUnique() || isInGroup();
+    }
+
     final public String toString()
     {
         return getLabel();
