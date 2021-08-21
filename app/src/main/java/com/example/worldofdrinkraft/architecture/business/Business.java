@@ -86,7 +86,7 @@ public class Business implements IBusiness
     @Override
     public Boolean gamemodeTypeIs(GamemodeType gamemodeType)
     {
-        return Boolean.valueOf(_gamemodeType.equals(gamemodeType));
+        return _gamemodeType.equals(gamemodeType);
     }
 
     @Override
