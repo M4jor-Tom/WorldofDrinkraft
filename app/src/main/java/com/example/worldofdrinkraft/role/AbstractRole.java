@@ -3,6 +3,7 @@ package com.example.worldofdrinkraft.role;
 import android.util.Log;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 
 import com.example.worldofdrinkraft.architecture.business.IBusinessContainer;
 import com.example.worldofdrinkraft.gamemode.GamemodeType;
@@ -22,28 +23,34 @@ abstract public class AbstractRole
     abstract protected String getEnglishRule();
     abstract protected String getFrenchRule();
 
+    @NonNull
     final public Boolean isOfType(RoleType type)
     {
         return getType().equals(type);
     }
 
+    @NonNull
     final public Boolean isUnique()
     {
         return isNormallyUnique()
                 && !IBusinessContainer.getInstance().gamemodeTypeIs(GamemodeType.LIMITLESS_TYPE);
     }
 
+    @NonNull
     final public Boolean isInGroup()
     {
         return isNormallyInGroup()
                 && !IBusinessContainer.getInstance().gamemodeTypeIs(GamemodeType.LIMITLESS_TYPE);
     }
 
+    @NonNull
     final public Boolean hasCountConstraint()
     {
         return isUnique() || isInGroup();
     }
 
+    @NonNull
+    @Override
     final public String toString()
     {
         return getLabel();
@@ -65,6 +72,7 @@ abstract public class AbstractRole
         return LanguageManager.UNSET_LANGUAGE_ERROR_MESSAGE;
     }
 
+    @Nullable
     final public String getRule()
     {
         switch(LanguageManager.getInstance().getLanguage())
