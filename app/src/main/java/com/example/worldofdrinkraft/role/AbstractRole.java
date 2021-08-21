@@ -2,6 +2,8 @@ package com.example.worldofdrinkraft.role;
 
 import android.util.Log;
 
+import androidx.annotation.NonNull;
+
 import com.example.worldofdrinkraft.architecture.business.IBusinessContainer;
 import com.example.worldofdrinkraft.gamemode.GamemodeType;
 import com.example.worldofdrinkraft.language.LanguageManager;
@@ -42,6 +44,7 @@ abstract public class AbstractRole
         return getLabel();
     }
 
+    @NonNull
     final public String getLabel()
     {
         switch(LanguageManager.getInstance().getLanguage())
@@ -54,7 +57,7 @@ abstract public class AbstractRole
         }
 
         Log.e("AbstractRole::label", LanguageManager.UNSET_LANGUAGE_ERROR_MESSAGE);
-        return null;
+        return LanguageManager.UNSET_LANGUAGE_ERROR_MESSAGE;
     }
 
     final public String getRule()
