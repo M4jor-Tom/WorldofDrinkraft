@@ -7,34 +7,13 @@ import java.util.List;
 
 public class RoleFactory
 {
+    private static List<AbstractRole> _roleList = null;
+
     public static AbstractRole getRoleByType(RoleType roleType)
     {
-        switch(roleType)
-        {
-            case CITIZEN_TYPE:
-                return new CitizenRole();
-
-            case COWBOY_TYPE:
-                return new CowboyRole();
-
-            case FREEZER_TYPE:
-                return new FreezerRole();
-
-            case GYPSY_TYPE:
-                return new GypsyRole();
-
-            case NINJA_TYPE:
-                return new NinjaRole();
-
-            case ROMAN_TYPE:
-                return new RomanRole();
-
-            case SADISTIC_MASOCHIST_TYPE:
-                return new SadisticMasochistRole();
-
-            case VIKING_TYPE:
-                return new VikingRole();
-        }
+        for(AbstractRole role: getAllRoles())
+            if(role.isOfType(roleType))
+                return role;
 
         Log.e("RoleFactory::roleByType", "Unset role");
         return null;
@@ -47,12 +26,21 @@ public class RoleFactory
 
     public static List<AbstractRole> getAllRoles()
     {
-        List<AbstractRole> roleList = new ArrayList<>();
+        if(getRoleList() == null)
+        {
+            setRoleList(new ArrayList<>());
 
-        for(RoleType roleType: RoleType.values())
-            roleList.add(RoleFactory.getRoleByType(roleType));
+            getRoleList().add(new CitizenRole());
+            getRoleList().add(new CowboyRole());
+            getRoleList().add(new FreezerRole());
+            getRoleList().add(new GypsyRole());
+            getRoleList().add(new NinjaRole());
+            getRoleList().add(new RomanRole());
+            getRoleList().add(new SadisticMasochistRole());
+            getRoleList().add(new VikingRole());
+        }
 
-        return roleList;
+        return getRoleList();
     }
 
     public static List<AbstractRole> getUniqueRoleList()
@@ -75,5 +63,20 @@ public class RoleFactory
                 groupRoleList.add(role);
 
         return groupRoleList;
+    }
+
+    private static void setRoleList(List<AbstractRole> roleList)
+    {
+        _roleList = roleList;
+    }
+
+    private static List<AbstractRole> getRoleList()
+    {
+        return _roleList;
+    }
+
+    private static void addRoleToList(AbstractRole role)
+    {
+        getRoleList().add(role);
     }
 }
