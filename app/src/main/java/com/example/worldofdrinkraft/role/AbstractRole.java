@@ -2,6 +2,8 @@ package com.example.worldofdrinkraft.role;
 
 import android.util.Log;
 
+import com.example.worldofdrinkraft.architecture.business.IBusinessContainer;
+import com.example.worldofdrinkraft.gamemode.GamemodeType;
 import com.example.worldofdrinkraft.language.Language;
 import com.example.worldofdrinkraft.language.LanguageType;
 
@@ -22,6 +24,22 @@ abstract public class AbstractRole
     final public Boolean isOfType(RoleType type)
     {
         return Boolean.valueOf(getType().equals(type));
+    }
+
+    final public Boolean isUnique()
+    {
+        return Boolean.valueOf(
+                isNormallyUnique()
+                && !IBusinessContainer.getInstance().gamemodeTypeIs(GamemodeType.LIMITLESS_TYPE)
+        );
+    }
+
+    final public Boolean isInGroup()
+    {
+        return Boolean.valueOf(
+                isNormallyInGroup()
+                && !IBusinessContainer.getInstance().gamemodeTypeIs(GamemodeType.LIMITLESS_TYPE)
+        );
     }
 
     final public String toString()
