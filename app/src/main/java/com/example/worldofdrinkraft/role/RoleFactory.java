@@ -7,10 +7,12 @@ import androidx.annotation.Nullable;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Random;
 
 public class RoleFactory
 {
     private static List<AbstractRole> _roleList = null;
+    private final static Random _random = new Random();
 
     @Nullable
     public static AbstractRole getRoleByType(RoleType roleType)
