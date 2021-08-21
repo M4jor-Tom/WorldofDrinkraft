@@ -48,6 +48,18 @@ public class RoleFactory
     }
 
     @NonNull
+    public static List<AbstractRole> getCountConstraintlessRoleList()
+    {
+        List<AbstractRole> countConstraintlessRoleList = new ArrayList<>();
+
+        for(AbstractRole role: getAllRoles())
+            if(!role.hasCountConstraint())
+                countConstraintlessRoleList.add(role);
+
+        return countConstraintlessRoleList;
+    }
+
+    @NonNull
     public static List<AbstractRole> getUniqueRoleList()
     {
         List<AbstractRole> uniqueRoleList = new ArrayList<>();
