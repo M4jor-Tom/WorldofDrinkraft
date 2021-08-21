@@ -18,6 +18,8 @@ public interface IBusiness
     public void deletePlayer(Player player) throws NonexistentPlayerException;
     public List<Player> getPlayerList();
 
+    public void randomizePlayerRoles();
+
     public void setGamemodeType(GamemodeType gamemodeType);
     public GamemodeType getGamemodeType();
     public Boolean gamemodeTypeIs(GamemodeType gamemodeType);
