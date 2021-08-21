@@ -30,14 +30,14 @@ public class RoleFactory
         {
             setRoleList(new ArrayList<>());
 
-            getRoleList().add(new CitizenRole());
-            getRoleList().add(new CowboyRole());
-            getRoleList().add(new FreezerRole());
-            getRoleList().add(new GypsyRole());
-            getRoleList().add(new NinjaRole());
-            getRoleList().add(new RomanRole());
-            getRoleList().add(new SadisticMasochistRole());
-            getRoleList().add(new VikingRole());
+            addRoleToList(new CitizenRole());
+            addRoleToList(new CowboyRole());
+            addRoleToList(new FreezerRole());
+            addRoleToList(new GypsyRole());
+            addRoleToList(new NinjaRole());
+            addRoleToList(new RomanRole());
+            addRoleToList(new SadisticMasochistRole());
+            addRoleToList(new VikingRole());
         }
 
         return getRoleList();
