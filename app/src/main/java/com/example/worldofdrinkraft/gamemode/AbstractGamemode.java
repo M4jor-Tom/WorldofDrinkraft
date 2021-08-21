@@ -2,7 +2,7 @@ package com.example.worldofdrinkraft.gamemode;
 
 import android.util.Log;
 
-import com.example.worldofdrinkraft.language.Language;
+import com.example.worldofdrinkraft.language.LanguageManager;
 
 abstract public class AbstractGamemode
 {
@@ -13,7 +13,7 @@ abstract public class AbstractGamemode
 
     final public String getLabel()
     {
-        switch(Language.getInstance().getLanguageType())
+        switch(LanguageManager.getInstance().getLanguageType())
         {
             case ENGLISH:
                 return getEnglishLabel();
@@ -22,7 +22,7 @@ abstract public class AbstractGamemode
                 return getFrenchLabel();
         }
 
-        Log.e("Gamemode::getLabel()", Language.UNSET_LANGUAGE_ERROR_MESSAGE);
+        Log.e("Gamemode::getLabel()", LanguageManager.UNSET_LANGUAGE_ERROR_MESSAGE);
         return null;
     }
 }

@@ -4,8 +4,7 @@ import android.util.Log;
 
 import com.example.worldofdrinkraft.architecture.business.IBusinessContainer;
 import com.example.worldofdrinkraft.gamemode.GamemodeType;
-import com.example.worldofdrinkraft.language.Language;
-import com.example.worldofdrinkraft.language.LanguageType;
+import com.example.worldofdrinkraft.language.LanguageManager;
 
 abstract public class AbstractRole
 {
@@ -49,7 +48,7 @@ abstract public class AbstractRole
 
     final public String getLabel()
     {
-        switch(Language.getInstance().getLanguageType())
+        switch(LanguageManager.getInstance().getLanguageType())
         {
             case ENGLISH:
                 return getEnglishLabel();
@@ -58,13 +57,13 @@ abstract public class AbstractRole
                 return getFrenchLabel();
         }
 
-        Log.e("AbstractRole::label", Language.UNSET_LANGUAGE_ERROR_MESSAGE);
+        Log.e("AbstractRole::label", LanguageManager.UNSET_LANGUAGE_ERROR_MESSAGE);
         return null;
     }
 
     final public String getRule()
     {
-        switch(Language.getInstance().getLanguageType())
+        switch(LanguageManager.getInstance().getLanguageType())
         {
             case ENGLISH:
                 return getEnglishRule();
@@ -73,7 +72,7 @@ abstract public class AbstractRole
                 return getFrenchRule();
         }
 
-        Log.e("AbstractRole::rule", Language.UNSET_LANGUAGE_ERROR_MESSAGE);
+        Log.e("AbstractRole::rule", LanguageManager.UNSET_LANGUAGE_ERROR_MESSAGE);
         return null;
     }
 }

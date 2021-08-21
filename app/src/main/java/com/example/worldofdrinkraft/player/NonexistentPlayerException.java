@@ -2,14 +2,14 @@ package com.example.worldofdrinkraft.player;
 
 import android.util.Log;
 
-import com.example.worldofdrinkraft.language.Language;
+import com.example.worldofdrinkraft.language.LanguageManager;
 
 public class NonexistentPlayerException extends Exception
 {
     @Override
     public String getMessage()
     {
-        switch(Language.getInstance().getLanguageType())
+        switch(LanguageManager.getInstance().getLanguageType())
         {
             case ENGLISH:
                 return "Player does not exist";
@@ -18,7 +18,7 @@ public class NonexistentPlayerException extends Exception
                 return "Le joueur n'existe pas";
         }
 
-        Log.e("NonexistentPlayerExcptn", Language.UNSET_LANGUAGE_ERROR_MESSAGE);
+        Log.e("NonexistentPlayerExcptn", LanguageManager.UNSET_LANGUAGE_ERROR_MESSAGE);
         return null;
     }
 }

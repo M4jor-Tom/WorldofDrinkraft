@@ -1,24 +1,24 @@
 package com.example.worldofdrinkraft.language;
 
-public class Language
+public class LanguageManager
 {
     private LanguageType _languageType;
 
-    private static Language _language = null;
+    private static LanguageManager _languageManager = null;
 
     public static final String UNSET_LANGUAGE_ERROR_MESSAGE = "Unset language";
 
-    public Language(LanguageType languageType)
+    public LanguageManager(LanguageType languageType)
     {
         setLanguageType(languageType);
     }
 
-    public static Language getInstance()
+    public static LanguageManager getInstance()
     {
-        if(_language == null)
-            _language = new Language(LanguageType.ENGLISH);
+        if(_languageManager == null)
+            _languageManager = new LanguageManager(LanguageType.ENGLISH);
 
-        return _language;
+        return _languageManager;
     }
 
     public void setLanguageType(LanguageType languageType)

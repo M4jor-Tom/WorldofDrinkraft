@@ -2,7 +2,7 @@ package com.example.worldofdrinkraft.event;
 
 import android.util.Log;
 
-import com.example.worldofdrinkraft.language.Language;
+import com.example.worldofdrinkraft.language.LanguageManager;
 
 abstract public class AbstractEvent
 {
@@ -13,7 +13,7 @@ abstract public class AbstractEvent
 
     final public String getText()
     {
-        switch(Language.getInstance().getLanguageType())
+        switch(LanguageManager.getInstance().getLanguageType())
         {
             case ENGLISH:
                 return getEnglishText();
@@ -22,7 +22,7 @@ abstract public class AbstractEvent
                 return getFrenchText();
         }
 
-        Log.e("AbstractEvent.getText()", Language.UNSET_LANGUAGE_ERROR_MESSAGE);
+        Log.e("AbstractEvent.getText()", LanguageManager.UNSET_LANGUAGE_ERROR_MESSAGE);
         return null;
     }
 }

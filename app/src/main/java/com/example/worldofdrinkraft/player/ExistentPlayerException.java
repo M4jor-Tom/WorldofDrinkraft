@@ -2,14 +2,14 @@ package com.example.worldofdrinkraft.player;
 
 import android.util.Log;
 
-import com.example.worldofdrinkraft.language.Language;
+import com.example.worldofdrinkraft.language.LanguageManager;
 
 public class ExistentPlayerException extends Exception
 {
     @Override
     public String getMessage()
     {
-        switch(Language.getInstance().getLanguageType())
+        switch(LanguageManager.getInstance().getLanguageType())
         {
             case ENGLISH:
                 return "Player already exists";
@@ -18,7 +18,7 @@ public class ExistentPlayerException extends Exception
                 return "Le joueur existe déjà";
         }
 
-        Log.e("ExistentPlayerException", Language.UNSET_LANGUAGE_ERROR_MESSAGE);
+        Log.e("ExistentPlayerException", LanguageManager.UNSET_LANGUAGE_ERROR_MESSAGE);
         return null;
     }
 }

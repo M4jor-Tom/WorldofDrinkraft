@@ -3,7 +3,7 @@ package com.example.worldofdrinkraft.architecture.business;
 import com.example.worldofdrinkraft.event.AbstractEvent;
 import com.example.worldofdrinkraft.event.EventFactory;
 import com.example.worldofdrinkraft.gamemode.GamemodeType;
-import com.example.worldofdrinkraft.language.Language;
+import com.example.worldofdrinkraft.language.LanguageManager;
 import com.example.worldofdrinkraft.player.ExistentPlayerException;
 import com.example.worldofdrinkraft.player.NonexistentPlayerException;
 import com.example.worldofdrinkraft.language.LanguageType;
@@ -25,13 +25,13 @@ public class Business implements IBusiness
     @Override
     public void setLanguage(LanguageType languageType)
     {
-        Language.getInstance().setLanguageType(languageType);
+        LanguageManager.getInstance().setLanguageType(languageType);
     }
 
     @Override
     public LanguageType getLanguage()
     {
-        return Language.getInstance().getLanguageType();
+        return LanguageManager.getInstance().getLanguageType();
     }
 
     @Override
