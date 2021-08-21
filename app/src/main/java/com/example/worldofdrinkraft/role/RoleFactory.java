@@ -2,6 +2,9 @@ package com.example.worldofdrinkraft.role;
 
 import android.util.Log;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -9,6 +12,7 @@ public class RoleFactory
 {
     private static List<AbstractRole> _roleList = null;
 
+    @Nullable
     public static AbstractRole getRoleByType(RoleType roleType)
     {
         for(AbstractRole role: getAllRoles())
@@ -43,6 +47,7 @@ public class RoleFactory
         return getRoleList();
     }
 
+    @NonNull
     public static List<AbstractRole> getUniqueRoleList()
     {
         List<AbstractRole> uniqueRoleList = new ArrayList<>();
@@ -54,6 +59,7 @@ public class RoleFactory
         return uniqueRoleList;
     }
 
+    @NonNull
     public static List<AbstractRole> getInGroupRoleList()
     {
         List<AbstractRole> groupRoleList = new ArrayList<>();
