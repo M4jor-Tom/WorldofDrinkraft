@@ -1,5 +1,7 @@
 package com.example.worldofdrinkraft.architecture.business;
 
+import androidx.annotation.NonNull;
+
 import com.example.worldofdrinkraft.event.AbstractEvent;
 import com.example.worldofdrinkraft.event.EventFactory;
 import com.example.worldofdrinkraft.gamemode.GamemodeType;
@@ -69,6 +71,12 @@ public class Business implements IBusiness
     public List<Player> getPlayerList()
     {
         return _playerList;
+    }
+
+    @NonNull
+    private Integer getPlayerCount()
+    {
+        return getPlayerList().size();
     }
 
     @Override
