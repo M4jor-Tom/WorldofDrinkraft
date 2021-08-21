@@ -1,5 +1,6 @@
 package com.example.worldofdrinkraft.architecture.business;
 
+import com.example.worldofdrinkraft.gamemode.GamemodeType;
 import com.example.worldofdrinkraft.language.Language;
 import com.example.worldofdrinkraft.player.ExistentPlayerException;
 import com.example.worldofdrinkraft.player.NonexistentPlayerException;
@@ -11,10 +12,12 @@ import java.util.List;
 public class Business implements IBusiness
 {
     private List<Player> _playerList;
+    private GamemodeType _gamemodeType;
 
     public Business(List<Player> playerList)
     {
         setPlayerList(playerList);
+        setGamemodeType(null);
     }
 
     @Override
@@ -64,5 +67,23 @@ public class Business implements IBusiness
     public List<Player> getPlayerList()
     {
         return _playerList;
+    }
+
+    @Override
+    public void setGamemodeType(GamemodeType gamemodeType)
+    {
+        _gamemodeType = gamemodeType;
+    }
+
+    @Override
+    public GamemodeType getGamemodeType()
+    {
+        return _gamemodeType;
+    }
+
+    @Override
+    public Boolean gamemodeTypeIs(GamemodeType gamemodeType)
+    {
+        return Boolean.valueOf(_gamemodeType.equals(gamemodeType));
     }
 }
