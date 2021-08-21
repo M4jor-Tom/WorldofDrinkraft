@@ -1,5 +1,6 @@
 package com.example.worldofdrinkraft.architecture.business;
 
+import com.example.worldofdrinkraft.event.AbstractEvent;
 import com.example.worldofdrinkraft.gamemode.GamemodeType;
 import com.example.worldofdrinkraft.player.ExistentPlayerException;
 import com.example.worldofdrinkraft.player.NonexistentPlayerException;
@@ -20,4 +21,6 @@ public interface IBusiness
     public void setGamemodeType(GamemodeType gamemodeType);
     public GamemodeType getGamemodeType();
     public Boolean gamemodeTypeIs(GamemodeType gamemodeType);
+
+    public AbstractEvent getNextEvent();
 }

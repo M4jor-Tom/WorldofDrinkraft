@@ -1,5 +1,7 @@
 package com.example.worldofdrinkraft.architecture.business;
 
+import com.example.worldofdrinkraft.event.AbstractEvent;
+import com.example.worldofdrinkraft.event.EventFactory;
 import com.example.worldofdrinkraft.gamemode.GamemodeType;
 import com.example.worldofdrinkraft.language.Language;
 import com.example.worldofdrinkraft.player.ExistentPlayerException;
@@ -85,5 +87,11 @@ public class Business implements IBusiness
     public Boolean gamemodeTypeIs(GamemodeType gamemodeType)
     {
         return Boolean.valueOf(_gamemodeType.equals(gamemodeType));
+    }
+
+    @Override
+    public AbstractEvent getNextEvent()
+    {
+        return EventFactory.getRandomEvent();
     }
 }
