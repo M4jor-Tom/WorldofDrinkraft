@@ -37,7 +37,7 @@ public class Player
         return _name;
     }
 
-    private void setRole(AbstractRole role)
+    public void setRole(AbstractRole role)
     {
         _role = role;
     }
