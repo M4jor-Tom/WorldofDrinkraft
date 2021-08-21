@@ -22,23 +22,19 @@ abstract public class AbstractRole
 
     final public Boolean isOfType(RoleType type)
     {
-        return Boolean.valueOf(getType().equals(type));
+        return getType().equals(type);
     }
 
     final public Boolean isUnique()
     {
-        return Boolean.valueOf(
-                isNormallyUnique()
-                && !IBusinessContainer.getInstance().gamemodeTypeIs(GamemodeType.LIMITLESS_TYPE)
-        );
+        return isNormallyUnique()
+                && !IBusinessContainer.getInstance().gamemodeTypeIs(GamemodeType.LIMITLESS_TYPE);
     }
 
     final public Boolean isInGroup()
     {
-        return Boolean.valueOf(
-                isNormallyInGroup()
-                && !IBusinessContainer.getInstance().gamemodeTypeIs(GamemodeType.LIMITLESS_TYPE)
-        );
+        return isNormallyInGroup()
+                && !IBusinessContainer.getInstance().gamemodeTypeIs(GamemodeType.LIMITLESS_TYPE);
     }
 
     final public String toString()
