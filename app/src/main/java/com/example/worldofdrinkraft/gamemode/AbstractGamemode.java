@@ -11,6 +11,11 @@ abstract public class AbstractGamemode
     abstract protected String getEnglishLabel();
     abstract protected String getFrenchLabel();
 
+    final public Boolean gamemodeTypeIs(GamemodeType gamemodeType)
+    {
+        return getGamemodeType().equals(gamemodeType);
+    }
+
     final public String getLabel()
     {
         switch(LanguageManager.getInstance().getLanguage())
