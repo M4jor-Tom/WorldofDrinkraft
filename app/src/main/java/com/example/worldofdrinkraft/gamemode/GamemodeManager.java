@@ -10,10 +10,19 @@ public class GamemodeManager
         setGamemode(gamemode);
     }
 
+    public GamemodeManager(GamemodeType gamemodeType)
+    {
+        setGamemodeByType(gamemodeType);
+    }
+
     public static GamemodeManager getInstance()
     {
         if(getGamemodeManager() == null)
-            setGamemodeManager(new GamemodeManager(null));
+            setGamemodeManager(
+                    new GamemodeManager(
+                            GamemodeType.CLASSIC_TYPE
+                    )
+            );
 
         return getGamemodeManager();
     }
