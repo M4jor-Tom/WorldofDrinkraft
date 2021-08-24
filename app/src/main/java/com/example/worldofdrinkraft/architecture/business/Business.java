@@ -4,6 +4,7 @@ import androidx.annotation.NonNull;
 
 import com.example.worldofdrinkraft.event.AbstractEvent;
 import com.example.worldofdrinkraft.event.EventFactory;
+import com.example.worldofdrinkraft.gamemode.GamemodeManager;
 import com.example.worldofdrinkraft.gamemode.GamemodeType;
 import com.example.worldofdrinkraft.language.LanguageManager;
 import com.example.worldofdrinkraft.player.ExistentPlayerException;
@@ -24,7 +25,6 @@ import java.util.Random;
 public class Business implements IBusiness
 {
     private List<Player> _playerList;
-    private GamemodeType _gamemodeType;
 
     private final static Integer PLAYER_MINIMUM_GROUP_SIZE = 2;
     private final static Integer PLAYER_CONSTRAINTLESS_PER_UNIQUE = 3;
@@ -115,7 +115,7 @@ public class Business implements IBusiness
     {
         Collections.shuffle(getPlayerList());
 
-        if(gamemodeTypeIs(GamemodeType.LIMITLESS_TYPE))
+        if(GamemodeManager.getInstance().getGamemode().gamemodeTypeIs(GamemodeType.LIMITLESS_TYPE))
         {
             for(Player player: getPlayerList())
                 player.setRole(RoleFactory.getRandomRole());
@@ -152,19 +152,13 @@ public class Business implements IBusiness
     @Override
     public void setGamemodeType(GamemodeType gamemodeType)
     {
-        _gamemodeType = gamemodeType;
+        GamemodeManager.getInstance().setGamemodeByType(gamemodeType);
     }
 
     @Override
     public GamemodeType getGamemodeType()
     {
-        return _gamemodeType;
-    }
-
-    @Override
-    public Boolean gamemodeTypeIs(GamemodeType gamemodeType)
-    {
-        return _gamemodeType.equals(gamemodeType);
+        return GamemodeManager.getInstance().getGamemode().getGamemodeType();
     }
 
     @Override

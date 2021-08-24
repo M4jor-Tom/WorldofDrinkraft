@@ -22,7 +22,6 @@ public interface IBusiness
 
     public void setGamemodeType(GamemodeType gamemodeType);
     public GamemodeType getGamemodeType();
-    public Boolean gamemodeTypeIs(GamemodeType gamemodeType);
 
     public AbstractEvent getNextEvent();
 }
