@@ -28,6 +28,12 @@
             android:label="@string/role_list_label">
 
         </activity>
+
+        <activity
+            android:name=".architecture.presentation.RoleWatchActivity"
+            android:label="@string/role_watch_label">
+
+        </activity>
     </application>
 
 </manifest>
