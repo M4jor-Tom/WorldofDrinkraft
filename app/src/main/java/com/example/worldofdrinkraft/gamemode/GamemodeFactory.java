@@ -2,24 +2,21 @@ package com.example.worldofdrinkraft.gamemode;
 
 import android.util.Log;
 
+import androidx.annotation.Nullable;
+
 import java.util.ArrayList;
 import java.util.List;
 
 public class GamemodeFactory
 {
+    private static List<AbstractGamemode> _gamemodeList;
+
+    @Nullable
     public static AbstractGamemode getGamemodeByType(GamemodeType gamemodeType)
     {
-        switch(gamemodeType)
-        {
-            case CLASSIC_TYPE:
-                return new ClassicGamemode();
-
-            case ULTIMATE_TYPE:
-                return new UltimateGamemode();
-
-            case LIMITLESS_TYPE:
-                return new LimitlessGamemode();
-        }
+        for(AbstractGamemode gamemode: getAllGamemodes())
+            if(gamemode.gamemodeTypeIs(gamemodeType))
+                return gamemode;
 
         Log.e("getGamemodeByType()", "Unset Gamemode");
         return null;
@@ -27,11 +24,30 @@ public class GamemodeFactory
 
     public static List<AbstractGamemode> getAllGamemodes()
     {
-        List<AbstractGamemode> gamemodeList = new ArrayList<>();
+        if(getGamemodeList() == null)
+        {
+            setGamemodeList(new ArrayList<>());
 
-        for(GamemodeType gamemodeType: GamemodeType.values())
-            gamemodeList.add(GamemodeFactory.getGamemodeByType(gamemodeType));
+            addGamemodeToList(new ClassicGamemode());
+            addGamemodeToList(new LimitlessGamemode());
+            addGamemodeToList(new UltimateGamemode());
+        }
 
-        return gamemodeList;
+        return getGamemodeList();
+    }
+
+    private static void setGamemodeList(List<AbstractGamemode> gamemodeList)
+    {
+        _gamemodeList = gamemodeList;
+    }
+
+    private static List<AbstractGamemode> getGamemodeList()
+    {
+        return _gamemodeList;
+    }
+
+    private static void addGamemodeToList(AbstractGamemode gamemode)
+    {
+        getGamemodeList().add(gamemode);
     }
 }
