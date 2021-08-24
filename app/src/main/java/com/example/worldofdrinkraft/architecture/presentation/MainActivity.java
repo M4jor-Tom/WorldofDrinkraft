@@ -18,6 +18,7 @@ public class MainActivity extends AppCompatActivity
         setContentView(R.layout.activity_main);
 
         MaterialButton playerListSetupButton = (MaterialButton)findViewById(R.id.main_button_players);
+        MaterialButton roleListButton = (MaterialButton)findViewById(R.id.main_button_roles);
 
         playerListSetupButton.setOnClickListener(
                 new View.OnClickListener() {
@@ -30,6 +31,22 @@ public class MainActivity extends AppCompatActivity
                         );
 
                         startActivity(playersSetupIntent);
+                    }
+                }
+        );
+
+        roleListButton.setOnClickListener(
+                new View.OnClickListener()
+                {
+                    @Override
+                    public void onClick(View v)
+                    {
+                        Intent roleListIntent = new Intent(
+                                MainActivity.this,
+                                RoleListActivity.class
+                        );
+
+                        startActivity(roleListIntent);
                     }
                 }
         );
