@@ -5,4 +5,6 @@
     <string name="main_button_players">Set Players</string>
     <string name="player_setup_add_player">Add Player</string>
     <string name="player_setup_randomize_roles">Randomize Roles</string>
+    <string name="role_list_label">Roles</string>
+    <string name="main_button_roles">See roles</string>
 </resources>

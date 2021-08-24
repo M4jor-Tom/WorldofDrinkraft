@@ -22,6 +22,12 @@
             android:label="@string/player_setup_label">
 
         </activity>
+
+        <activity
+            android:name=".architecture.presentation.RoleListActivity"
+            android:label="@string/role_list_label">
+
+        </activity>
     </application>
 
 </manifest>
