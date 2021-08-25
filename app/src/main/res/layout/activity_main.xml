@@ -21,4 +21,24 @@
 
     </com.google.android.material.button.MaterialButton>
 
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="100dp">
+
+    </View>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/freepik_attribution_text">
+
+    </TextView>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="https://fr.freepik.com/vecteurs/anniversaire">
+
+    </TextView>
+
 </LinearLayout>
