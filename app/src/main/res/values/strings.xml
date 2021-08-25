@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">WoD</string>
+    <string name="app_name">DrinkQuest</string>
     <string name="player_setup_label">Players setup</string>
     <string name="player_setup_name_hint">Player Name</string>
     <string name="main_button_players">Set Players</string>
