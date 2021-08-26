@@ -4,13 +4,12 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
-import android.widget.Spinner;
+import android.widget.ListView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.worldofdrinkraft.R;
 import com.example.worldofdrinkraft.architecture.business.IBusinessContainer;
-import com.example.worldofdrinkraft.game.Game;
 import com.example.worldofdrinkraft.gamemode.AbstractGamemode;
 import com.example.worldofdrinkraft.gamemode.GamemodeFactory;
 
@@ -22,9 +21,9 @@ public class GamemodeSelectionActivity extends AppCompatActivity
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_gamemode_selection);
 
-        Spinner gamemodeSelectionSpinner = (Spinner)findViewById(R.id.gamemode_selection_spinner);
+        ListView gamemodeSelectionListView = (ListView)findViewById(R.id.gamemode_selection_listview);
 
-        gamemodeSelectionSpinner.setAdapter(
+        gamemodeSelectionListView.setAdapter(
                 new ArrayAdapter<AbstractGamemode>(
                         GamemodeSelectionActivity.this,
                         R.layout.adapter_gamemode,
@@ -32,7 +31,7 @@ public class GamemodeSelectionActivity extends AppCompatActivity
                 )
         );
 
-        gamemodeSelectionSpinner.setOnItemClickListener(
+        gamemodeSelectionListView.setOnItemClickListener(
                 new AdapterView.OnItemClickListener()
                 {
                     @Override
