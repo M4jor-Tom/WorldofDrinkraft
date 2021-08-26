@@ -29,7 +29,7 @@ public class Business implements IBusiness
     private final static Integer PLAYER_MINIMUM_GROUP_SIZE = 2;
     private final static Integer PLAYER_CONSTRAINTLESS_PER_UNIQUE = 3;
 
-    private final Random _random = new Random();
+    private final static Random _random = new Random();
 
     public Business(List<Player> playerList)
     {
