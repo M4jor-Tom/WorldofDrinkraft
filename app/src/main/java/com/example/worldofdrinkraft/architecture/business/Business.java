@@ -34,7 +34,6 @@ public class Business implements IBusiness
     public Business(List<Player> playerList)
     {
         setPlayerList(playerList);
-        setGamemodeType(null);
     }
 
     @Override
