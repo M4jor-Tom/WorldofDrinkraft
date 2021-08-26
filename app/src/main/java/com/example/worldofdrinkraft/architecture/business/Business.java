@@ -161,6 +161,6 @@ public class Business implements IBusiness
     @Override
     public AbstractEvent getNextEvent()
     {
-        return EventFactory.getRandomEvent();
+        return Game.getInstance().getNextEvent();
     }
 }

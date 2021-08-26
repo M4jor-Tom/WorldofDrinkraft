@@ -1,5 +1,7 @@
 package com.example.worldofdrinkraft.game;
 
+import com.example.worldofdrinkraft.event.AbstractEvent;
+import com.example.worldofdrinkraft.event.EventFactory;
 import com.example.worldofdrinkraft.gamemode.AbstractGamemode;
 import com.example.worldofdrinkraft.gamemode.GamemodeFactory;
 import com.example.worldofdrinkraft.gamemode.GamemodeType;
@@ -29,6 +31,11 @@ public class Game
             );
 
         return getGamemodeManager();
+    }
+
+    public AbstractEvent getNextEvent()
+    {
+        return EventFactory.getRandomEvent();
     }
 
     private static void setGamemodeManager(Game game)
