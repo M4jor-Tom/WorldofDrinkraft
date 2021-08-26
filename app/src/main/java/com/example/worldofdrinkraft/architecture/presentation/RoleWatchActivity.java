@@ -32,9 +32,9 @@ public class RoleWatchActivity extends AppCompatActivity
                 roleLabelTextView.setText(role.getLabel());
                 roleRuleTextView.setText(role.getRule());
 
-                if(role.isUnique())
+                if(role.isNormallyUnique())
                     roleIsUniqueTextView.setText(R.string.unique_role_text);
-                if(role.isInGroup())
+                if(role.isNormallyInGroup())
                     roleIsInGroupTextView.setText(R.string.in_group_role_text);
             }
             catch(NullPointerException e)
