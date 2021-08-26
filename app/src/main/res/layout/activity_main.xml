@@ -6,6 +6,14 @@
     android:gravity="center">
 
     <com.google.android.material.button.MaterialButton
+        android:id="@+id/main_button_gamemode_selection"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/main_button_gamemode_selection">
+
+    </com.google.android.material.button.MaterialButton>
+
+    <com.google.android.material.button.MaterialButton
         android:id="@+id/main_button_players"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

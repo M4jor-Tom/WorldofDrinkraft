@@ -11,4 +11,5 @@
     <string name="unique_role_text">This role plays unique</string>
     <string name="in_group_role_text">This role plays in group</string>
     <string name="freepik_attribution_text">(Icon credit) Birthday vector created by rawpixel.com - fr.freepik.com</string>
+    <string name="main_button_gamemode_selection">Gamemode</string>
 </resources>
