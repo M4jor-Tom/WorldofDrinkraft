@@ -9,13 +9,13 @@ public class CitizenRole extends AbstractRole
     }
 
     @Override
-    protected Boolean isNormallyUnique()
+    public Boolean isNormallyUnique()
     {
         return Boolean.valueOf(false);
     }
 
     @Override
-    protected Boolean isNormallyInGroup()
+    public Boolean isNormallyInGroup()
     {
         return Boolean.valueOf(true);
     }

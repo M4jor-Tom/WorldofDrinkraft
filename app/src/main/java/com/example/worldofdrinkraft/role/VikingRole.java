@@ -9,13 +9,13 @@ public class VikingRole extends AbstractRole
     }
 
     @Override
-    protected Boolean isNormallyUnique()
+    public Boolean isNormallyUnique()
     {
         return Boolean.valueOf(false);
     }
 
     @Override
-    protected Boolean isNormallyInGroup()
+    public Boolean isNormallyInGroup()
     {
         return Boolean.valueOf(false);
     }

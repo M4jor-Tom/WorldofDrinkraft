@@ -13,9 +13,9 @@ abstract public class AbstractRole
 {
     abstract public RoleType getType();
 
-    abstract protected Boolean isNormallyUnique();
+    abstract public Boolean isNormallyUnique();
 
-    abstract protected Boolean isNormallyInGroup();
+    abstract public Boolean isNormallyInGroup();
 
     abstract protected String getEnglishLabel();
     abstract protected String getFrenchLabel();

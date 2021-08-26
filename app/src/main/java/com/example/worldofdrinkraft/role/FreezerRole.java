@@ -9,13 +9,13 @@ public class FreezerRole extends AbstractRole
     }
 
     @Override
-    protected Boolean isNormallyUnique()
+    public Boolean isNormallyUnique()
     {
         return Boolean.valueOf(true);
     }
 
     @Override
-    protected Boolean isNormallyInGroup()
+    public Boolean isNormallyInGroup()
     {
         return Boolean.valueOf(false);
     }
