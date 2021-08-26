@@ -17,8 +17,25 @@ public class MainActivity extends AppCompatActivity
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        MaterialButton gamemodeSelectionButton = (MaterialButton)findViewById(R.id.main_button_gamemode_selection);
         MaterialButton playerListSetupButton = (MaterialButton)findViewById(R.id.main_button_players);
         MaterialButton roleListButton = (MaterialButton)findViewById(R.id.main_button_roles);
+
+        gamemodeSelectionButton.setOnClickListener(
+                new View.OnClickListener()
+                {
+                    @Override
+                    public void onClick(View v)
+                    {
+                        Intent gamemodeSelectionIntent = new Intent(
+                                MainActivity.this,
+                                GamemodeSelectionActivity.class
+                        );
+
+                        startActivity(gamemodeSelectionIntent);
+                    }
+                }
+        );
 
         playerListSetupButton.setOnClickListener(
                 new View.OnClickListener() {

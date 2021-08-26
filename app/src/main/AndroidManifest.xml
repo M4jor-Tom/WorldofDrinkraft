@@ -34,6 +34,12 @@
             android:label="@string/role_watch_label">
 
         </activity>
+
+        <activity
+            android:name=".architecture.presentation.GamemodeSelectionActivity"
+            android:label="@string/gamemode_selection_label">
+
+        </activity>
     </application>
 
 </manifest>
