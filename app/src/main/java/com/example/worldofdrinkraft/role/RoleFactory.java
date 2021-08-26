@@ -94,7 +94,7 @@ public class RoleFactory
         List<AbstractRole> uniqueRoleList = new ArrayList<>();
 
         for(AbstractRole role: getAllRoles())
-            if(role.isUnique())
+            if(role.isNormallyUnique())
                 uniqueRoleList.add(role);
 
         return uniqueRoleList;
@@ -106,7 +106,7 @@ public class RoleFactory
         List<AbstractRole> groupRoleList = new ArrayList<>();
 
         for(AbstractRole role: getAllRoles())
-            if(role.isInGroup())
+            if(role.isNormallyInGroup())
                 groupRoleList.add(role);
 
         return groupRoleList;
