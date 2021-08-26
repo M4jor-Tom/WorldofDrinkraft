@@ -1,5 +1,7 @@
 package com.example.worldofdrinkraft.player;
 
+import android.util.Log;
+
 import androidx.annotation.NonNull;
 
 import com.example.worldofdrinkraft.game.Game;
@@ -37,9 +39,14 @@ public class Player
     @Override
     public boolean equals(Object player)
     {
-        return getName().equalsIgnoreCase(((Player)player).getName());
+        if(player.getClass() == Player.class)
+            return getName().equalsIgnoreCase(((Player)player).getName());
+        Log.e("Player.equals()", "Given object is not a player");
+        return false;
     }
 
+    @Override
+    @NonNull
     public String toString()
     {
         return getName() + " - " + getRole();
