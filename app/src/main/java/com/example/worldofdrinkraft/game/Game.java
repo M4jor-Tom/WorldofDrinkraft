@@ -1,25 +1,29 @@
-package com.example.worldofdrinkraft.gamemode;
+package com.example.worldofdrinkraft.game;
 
-public class GamemodeManager
+import com.example.worldofdrinkraft.gamemode.AbstractGamemode;
+import com.example.worldofdrinkraft.gamemode.GamemodeFactory;
+import com.example.worldofdrinkraft.gamemode.GamemodeType;
+
+public class Game
 {
-    private static GamemodeManager _gamemodeManager = null;
+    private static Game _game = null;
     private AbstractGamemode _gamemode;
 
-    public GamemodeManager(AbstractGamemode gamemode)
+    public Game(AbstractGamemode gamemode)
     {
         setGamemode(gamemode);
     }
 
-    public GamemodeManager(GamemodeType gamemodeType)
+    public Game(GamemodeType gamemodeType)
     {
         setGamemodeByType(gamemodeType);
     }
 
-    public static GamemodeManager getInstance()
+    public static Game getInstance()
     {
         if(getGamemodeManager() == null)
             setGamemodeManager(
-                    new GamemodeManager(
+                    new Game(
                             GamemodeType.CLASSIC_TYPE
                     )
             );
@@ -27,14 +31,14 @@ public class GamemodeManager
         return getGamemodeManager();
     }
 
-    private static void setGamemodeManager(GamemodeManager gamemodeManager)
+    private static void setGamemodeManager(Game game)
     {
-        _gamemodeManager = gamemodeManager;
+        _game = game;
     }
 
-    private static GamemodeManager getGamemodeManager()
+    private static Game getGamemodeManager()
     {
-        return _gamemodeManager;
+        return _game;
     }
 
     public void setGamemodeByType(GamemodeType gamemodeType)

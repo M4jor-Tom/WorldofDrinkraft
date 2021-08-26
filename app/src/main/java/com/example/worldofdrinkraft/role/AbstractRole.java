@@ -5,8 +5,7 @@ import android.util.Log;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
-import com.example.worldofdrinkraft.architecture.business.IBusinessContainer;
-import com.example.worldofdrinkraft.gamemode.GamemodeManager;
+import com.example.worldofdrinkraft.game.Game;
 import com.example.worldofdrinkraft.gamemode.GamemodeType;
 import com.example.worldofdrinkraft.language.LanguageManager;
 
@@ -34,14 +33,14 @@ abstract public class AbstractRole
     final public Boolean isUnique()
     {
         return isNormallyUnique()
-                && !GamemodeManager.getInstance().getGamemode().gamemodeTypeIs(GamemodeType.LIMITLESS_TYPE);
+                && !Game.getInstance().getGamemode().gamemodeTypeIs(GamemodeType.LIMITLESS_TYPE);
     }
 
     @NonNull
     final public Boolean isInGroup()
     {
         return isNormallyInGroup()
-                && !GamemodeManager.getInstance().getGamemode().gamemodeTypeIs(GamemodeType.LIMITLESS_TYPE);
+                && !Game.getInstance().getGamemode().gamemodeTypeIs(GamemodeType.LIMITLESS_TYPE);
     }
 
     @NonNull
