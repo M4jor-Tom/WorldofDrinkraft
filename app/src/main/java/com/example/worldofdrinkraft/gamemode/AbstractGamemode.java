@@ -30,4 +30,10 @@ abstract public class AbstractGamemode
         Log.e("Gamemode::getLabel()", LanguageManager.UNSET_LANGUAGE_ERROR_MESSAGE);
         return null;
     }
+
+    @Override
+    public String toString()
+    {
+        return getLabel();
+    }
 }
