@@ -35,6 +35,7 @@ public class PlayersSetupActivity extends AppCompatActivity
         MaterialButton addPlayerButton = (MaterialButton)findViewById(R.id.player_setup_add_player);
         setPlayerRoleSpinner((Spinner)findViewById(R.id.player_setup_role_spinner));
         setPlayerListView((ListView)findViewById(R.id.player_setup_player_list_view));
+        MaterialButton randomizePlayersRolesButton = (MaterialButton)findViewById(R.id.player_setup_randomize_roles);
 
         getPlayerRoleSpinner().setAdapter(
                 new ArrayAdapter<AbstractRole>(
@@ -73,6 +74,18 @@ public class PlayersSetupActivity extends AppCompatActivity
                                     Toast.LENGTH_SHORT
                             ).show();
                         }
+                    }
+                }
+        );
+
+        randomizePlayersRolesButton.setOnClickListener(
+                new View.OnClickListener()
+                {
+                    @Override
+                    public void onClick(View v)
+                    {
+                        IBusinessContainer.getInstance().randomizePlayerRoles();
+                        actualizePlayerListView();
                     }
                 }
         );
