@@ -46,7 +46,7 @@ abstract public class AbstractRole
     @NonNull
     final public Boolean hasCountConstraint()
     {
-        return isUnique() || isInGroup();
+        return isNormallyUnique() || isNormallyInGroup();
     }
 
     @NonNull
