@@ -11,7 +11,7 @@ public class FreezerRole extends AbstractRole
     @Override
     protected Boolean isNormallyUnique()
     {
-        return Boolean.valueOf(false);
+        return Boolean.valueOf(true);
     }
 
     @Override
