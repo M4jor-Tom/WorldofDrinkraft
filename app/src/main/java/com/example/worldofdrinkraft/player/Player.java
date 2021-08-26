@@ -1,5 +1,9 @@
 package com.example.worldofdrinkraft.player;
 
+import androidx.annotation.NonNull;
+
+import com.example.worldofdrinkraft.game.Game;
+import com.example.worldofdrinkraft.gamemode.GamemodeType;
 import com.example.worldofdrinkraft.role.AbstractRole;
 
 public class Player
@@ -14,6 +18,20 @@ public class Player
     {
         setName(name);
         setRole(role);
+    }
+
+    @NonNull
+    final public Boolean isUnique()
+    {
+        return getRole().isNormallyUnique()
+                && !Game.getInstance().getGamemode().gamemodeTypeIs(GamemodeType.LIMITLESS_TYPE);
+    }
+
+    @NonNull
+    final public Boolean isInGroup()
+    {
+        return getRole().isNormallyInGroup()
+                && !Game.getInstance().getGamemode().gamemodeTypeIs(GamemodeType.LIMITLESS_TYPE);
     }
 
     @Override

@@ -30,20 +30,6 @@ abstract public class AbstractRole
     }
 
     @NonNull
-    final public Boolean isUnique()
-    {
-        return isNormallyUnique()
-                && !Game.getInstance().getGamemode().gamemodeTypeIs(GamemodeType.LIMITLESS_TYPE);
-    }
-
-    @NonNull
-    final public Boolean isInGroup()
-    {
-        return isNormallyInGroup()
-                && !Game.getInstance().getGamemode().gamemodeTypeIs(GamemodeType.LIMITLESS_TYPE);
-    }
-
-    @NonNull
     final public Boolean hasCountConstraint()
     {
         return isNormallyUnique() || isNormallyInGroup();
