@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.ArrayAdapter;
+import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.Spinner;
@@ -24,6 +25,7 @@ public class PlayersSetupActivity extends AppCompatActivity
     private EditText _playerNameEditText;
     private Spinner _playerRoleSpinner;
     private ListView _playerListView;
+    private CheckBox _playerDrinksCheckbox;
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
@@ -36,6 +38,7 @@ public class PlayersSetupActivity extends AppCompatActivity
         setPlayerRoleSpinner((Spinner)findViewById(R.id.player_setup_role_spinner));
         setPlayerListView((ListView)findViewById(R.id.player_setup_player_list_view));
         MaterialButton randomizePlayersRolesButton = (MaterialButton)findViewById(R.id.player_setup_randomize_roles);
+        setPlayerDrinksCheckbox((CheckBox)findViewById(R.id.player_setup_drinker_checkbox));
 
         getPlayerRoleSpinner().setAdapter(
                 new ArrayAdapter<AbstractRole>(
@@ -59,7 +62,8 @@ public class PlayersSetupActivity extends AppCompatActivity
                             IBusinessContainer.getInstance().addPlayer(
                                     new Player(
                                             getPlayerNameEditText().getText().toString(),
-                                            (AbstractRole)getPlayerRoleSpinner().getSelectedItem()
+                                            (AbstractRole)getPlayerRoleSpinner().getSelectedItem(),
+                                            getPlayerDrinksCheckbox().isChecked()
                                     )
                             );
 
@@ -130,5 +134,15 @@ public class PlayersSetupActivity extends AppCompatActivity
     private ListView getPlayerListView()
     {
         return _playerListView;
+    }
+
+    private void setPlayerDrinksCheckbox(CheckBox playerDrinksCheckbox)
+    {
+        _playerDrinksCheckbox = playerDrinksCheckbox;
+    }
+
+    private CheckBox getPlayerDrinksCheckbox()
+    {
+        return _playerDrinksCheckbox;
     }
 }

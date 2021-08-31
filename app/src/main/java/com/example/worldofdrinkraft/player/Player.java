@@ -12,14 +12,17 @@ public class Player
 {
     private String _name;
     private AbstractRole _role;
+    private Boolean _drinker;
 
     public Player(
             String name,
-            AbstractRole role
+            AbstractRole role,
+            Boolean drinker
     )
     {
         setName(name);
         setRole(role);
+        setDrinker(drinker);
     }
 
     @NonNull
@@ -49,7 +52,12 @@ public class Player
     @NonNull
     public String toString()
     {
-        return getName() + " - " + getRole();
+        return getName() + " - " + getRole() + " - " +
+            (
+                isDrinker()
+                    ? "drinks"
+                    : "doesn't drink"
+            );
     }
 
     private void setName(String name)
@@ -70,5 +78,15 @@ public class Player
     public AbstractRole getRole()
     {
         return _role;
+    }
+
+    private void setDrinker(Boolean drinker)
+    {
+        _drinker = drinker;
+    }
+
+    private Boolean isDrinker()
+    {
+        return _drinker;
     }
 }

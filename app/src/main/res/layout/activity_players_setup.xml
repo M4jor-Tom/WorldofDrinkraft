@@ -26,6 +26,13 @@
 
         </Spinner>
 
+        <CheckBox
+            android:id="@+id/player_setup_drinker_checkbox"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+        </CheckBox>
+
         <com.google.android.material.button.MaterialButton
             android:id="@+id/player_setup_add_player"
             android:layout_width="wrap_content"
