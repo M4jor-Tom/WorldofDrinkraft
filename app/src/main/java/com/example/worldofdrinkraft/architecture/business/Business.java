@@ -110,38 +110,41 @@ public class Business implements IBusiness
     @Override
     public void randomizePlayerRoles()
     {
-        Collections.shuffle(getPlayerList());
-
-        if(Game.getInstance().getGamemode().gamemodeTypeIs(GamemodeType.LIMITLESS_TYPE))
+        if(getPlayerCount() > 0)
         {
-            for(Player player: getPlayerList())
-                player.setRole(RoleFactory.getRandomRole());
-        }
-        else
-        {
-            //Can randomize limitless among count constraintless roles
-            for(Player player: getPlayerList())
-                player.setRole(RoleFactory.getRandomCountConstraintlessRole());
+            Collections.shuffle(getPlayerList());
 
-            if(getPlayerCount() <= PLAYER_CONSTRAINTLESS_PER_UNIQUE + 1)
+            if (Game.getInstance().getGamemode().gamemodeTypeIs(GamemodeType.LIMITLESS_TYPE))
             {
-                //Giving an unique role to a random player
-                getPlayerList().get(
-                    _random.nextInt(getPlayerCount())
-                ).setRole(RoleFactory.getRandomUniqueRole());
+                for(Player player : getPlayerList())
+                    player.setRole(RoleFactory.getRandomRole());
             }
-            else if(getPlayerCount() <= PLAYER_CONSTRAINTLESS_PER_UNIQUE + PLAYER_MINIMUM_GROUP_SIZE)
+            else
             {
-                //PLAYER_CONSTRAINTLESS_PER_UNIQUE < Players count < PLAYER_MINIMUM_GROUP_SIZE
+                //Can randomize limitless among count constraintless roles
+                for (Player player : getPlayerList())
+                    player.setRole(RoleFactory.getRandomCountConstraintlessRole());
 
-                //Can randomize with 1 group and count constraintless roles
-                AbstractRole inGroupRole = RoleFactory.getRandomInGroupRole();
+                if(getPlayerCount() <= PLAYER_CONSTRAINTLESS_PER_UNIQUE + 1)
+                {
+                    //Giving an unique role to a random player
+                    getPlayerList().get(
+                            _random.nextInt(getPlayerCount())
+                    ).setRole(RoleFactory.getRandomUniqueRole());
+                }
+                else if (getPlayerCount() <= PLAYER_CONSTRAINTLESS_PER_UNIQUE + PLAYER_MINIMUM_GROUP_SIZE)
+                {
+                    //PLAYER_CONSTRAINTLESS_PER_UNIQUE < Players count < PLAYER_MINIMUM_GROUP_SIZE
 
-                //Giving the inGroup role to the 2 firsts players in the list
-                int i = 0;
-                for(Player player: getPlayerList())
-                    if(i++ < PLAYER_MINIMUM_GROUP_SIZE)
-                        player.setRole(inGroupRole);
+                    //Can randomize with 1 group and count constraintless roles
+                    AbstractRole inGroupRole = RoleFactory.getRandomInGroupRole();
+
+                    //Giving the inGroup role to the 2 firsts players in the list
+                    int i = 0;
+                    for (Player player : getPlayerList())
+                        if (i++ < PLAYER_MINIMUM_GROUP_SIZE)
+                            player.setRole(inGroupRole);
+                }
             }
         }
     }
