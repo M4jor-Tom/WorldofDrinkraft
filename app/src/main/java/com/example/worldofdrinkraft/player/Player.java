@@ -6,7 +6,12 @@ import androidx.annotation.NonNull;
 
 import com.example.worldofdrinkraft.game.Game;
 import com.example.worldofdrinkraft.gamemode.GamemodeType;
+import com.example.worldofdrinkraft.language.Language;
+import com.example.worldofdrinkraft.language.MultiLanguageString;
 import com.example.worldofdrinkraft.role.AbstractRole;
+
+import java.util.HashMap;
+import java.util.Map;
 
 public class Player
 {
@@ -48,16 +53,30 @@ public class Player
         return false;
     }
 
+    @NonNull
+    private String getDrinkerText()
+    {
+        Map<Language, String> drinkingHashMap = new HashMap<Language, String>();
+
+        if(isDrinker())
+        {
+            drinkingHashMap.put(Language.ENGLISH, "drinks");
+            drinkingHashMap.put(Language.FRENCH, "boit");
+        }
+        else
+        {
+            drinkingHashMap.put(Language.ENGLISH, "doesn't drink");
+            drinkingHashMap.put(Language.FRENCH, "Ne boit pas");
+        }
+
+        return (new MultiLanguageString(drinkingHashMap)).toString();
+    }
+
     @Override
     @NonNull
     public String toString()
     {
-        return getName() + " - " + getRole() + " - " +
-            (
-                isDrinker()
-                    ? "drinks"
-                    : "doesn't drink"
-            );
+        return getName() + " - " + getRole() + " - " + getDrinkerText();
     }
 
     private void setName(String name)
