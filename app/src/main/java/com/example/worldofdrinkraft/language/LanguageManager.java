@@ -1,5 +1,9 @@
 package com.example.worldofdrinkraft.language;
 
+import android.util.Log;
+
+import java.util.Locale;
+
 public class LanguageManager
 {
     private Language _language;
@@ -16,9 +20,26 @@ public class LanguageManager
     public static LanguageManager getInstance()
     {
         if(_languageManager == null)
-            _languageManager = new LanguageManager(Language.ENGLISH);
+            _languageManager = new LanguageManager(getSystemLanguage());
 
         return _languageManager;
+    }
+
+    private static Language getSystemLanguage()
+    {
+        String locale = Locale.getDefault().getLanguage();
+
+        switch(locale)
+        {
+            case "en":
+                return Language.ENGLISH;
+
+            case "fr":
+                return Language.FRENCH;
+        }
+
+        Log.e("getSystemLanguage()", "Unknown locale: " + locale);
+        return null;
     }
 
     public void setLanguage(Language language)
