@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">DrinkQuest</string>
+    <string name="player_setup_label">Joueurs</string>
+    <string name="gamemode_selection_label">Séléction du mode de jeu</string>
+    <string name="player_setup_name_hint">Nom du joueur</string>
+    <string name="main_button_players">Joueurs</string>
+    <string name="player_setup_add_player">Ajouter un joueur</string>
+    <string name="player_setup_randomize_roles">Rôles aléatoires</string>
+    <string name="role_list_label">Roles</string>
+    <string name="main_button_roles">Voir les roles</string>
+    <string name="role_watch_label">Infomations sur les rôles</string>
+    <string name="unique_role_text">Ce rôle se joue seul</string>
+    <string name="in_group_role_text">Ce rôle se joue en groupe</string>
+    <string name="freepik_attribution_text">(Icon credit) Birthday vector created by rawpixel.com - fr.freepik.com</string>
+    <string name="main_button_gamemode_selection">Mode de jeu</string>
+</resources>
