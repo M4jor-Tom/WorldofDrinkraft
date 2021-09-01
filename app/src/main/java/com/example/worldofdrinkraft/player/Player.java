@@ -23,11 +23,14 @@ public class Player
             String name,
             AbstractRole role,
             Boolean drinker
-    )
+    ) throws RoleForDrinkerException
     {
         setName(name);
         setRole(role);
         setDrinker(drinker);
+
+        if(!isDrinkingValid())
+            throw new RoleForDrinkerException();
     }
 
     final private Boolean isDrinkingValid()

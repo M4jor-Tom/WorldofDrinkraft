@@ -16,6 +16,7 @@ import com.example.worldofdrinkraft.R;
 import com.example.worldofdrinkraft.architecture.business.IBusinessContainer;
 import com.example.worldofdrinkraft.player.ExistentPlayerException;
 import com.example.worldofdrinkraft.player.Player;
+import com.example.worldofdrinkraft.player.RoleForDrinkerException;
 import com.example.worldofdrinkraft.role.AbstractRole;
 import com.example.worldofdrinkraft.role.RoleFactory;
 import com.google.android.material.button.MaterialButton;
@@ -71,6 +72,14 @@ public class PlayersSetupActivity extends AppCompatActivity
                             actualizePlayerListView();
                         }
                         catch(ExistentPlayerException e)
+                        {
+                            Toast.makeText(
+                                    PlayersSetupActivity.this,
+                                    e.getMessage(),
+                                    Toast.LENGTH_SHORT
+                            ).show();
+                        }
+                        catch(RoleForDrinkerException e)
                         {
                             Toast.makeText(
                                     PlayersSetupActivity.this,
