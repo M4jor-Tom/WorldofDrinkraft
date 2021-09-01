@@ -7,7 +7,12 @@ import androidx.annotation.Nullable;
 
 import com.example.worldofdrinkraft.game.Game;
 import com.example.worldofdrinkraft.gamemode.GamemodeType;
+import com.example.worldofdrinkraft.language.Language;
 import com.example.worldofdrinkraft.language.LanguageManager;
+import com.example.worldofdrinkraft.language.MultiLanguageString;
+
+import java.util.HashMap;
+import java.util.Map;
 
 abstract public class AbstractRole
 {
@@ -38,10 +43,29 @@ abstract public class AbstractRole
     }
 
     @NonNull
+    final public String getDrinkerText()
+    {
+        Map<Language, String> drinkerMap = new HashMap<>();
+
+        if(isDrinkerOnlyRole())
+        {
+            drinkerMap.put(Language.ENGLISH, "drinker role");
+            drinkerMap.put(Language.FRENCH, "rôle buveur");
+        }
+        else
+        {
+            drinkerMap.put(Language.ENGLISH, "role for all");
+            drinkerMap.put(Language.FRENCH, "rôle pour tous");
+        }
+
+        return (new MultiLanguageString(drinkerMap)).toString();
+    }
+
+    @NonNull
     @Override
     final public String toString()
     {
-        return getLabel();
+        return getLabel() + " - " + getDrinkerText();
     }
 
     @NonNull
