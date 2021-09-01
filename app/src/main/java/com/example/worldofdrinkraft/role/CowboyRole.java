@@ -9,6 +9,12 @@ public class CowboyRole extends AbstractRole
     }
 
     @Override
+    public Boolean isDrinkerOnlyRole()
+    {
+        return true;
+    }
+
+    @Override
     public Boolean isNormallyUnique()
     {
         return Boolean.valueOf(false);

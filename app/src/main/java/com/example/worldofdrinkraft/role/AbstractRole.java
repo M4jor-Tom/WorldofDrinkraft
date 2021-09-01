@@ -13,6 +13,8 @@ abstract public class AbstractRole
 {
     abstract public RoleType getType();
 
+    abstract public Boolean isDrinkerOnlyRole();
+
     abstract public Boolean isNormallyUnique();
 
     abstract public Boolean isNormallyInGroup();

@@ -9,6 +9,12 @@ public class SadisticMasochistRole extends AbstractRole
     }
 
     @Override
+    public Boolean isDrinkerOnlyRole()
+    {
+        return true;
+    }
+
+    @Override
     public Boolean isNormallyUnique()
     {
         return Boolean.valueOf(false);

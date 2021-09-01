@@ -9,6 +9,12 @@ public class CitizenRole extends AbstractRole
     }
 
     @Override
+    public Boolean isDrinkerOnlyRole()
+    {
+        return false;
+    }
+
+    @Override
     public Boolean isNormallyUnique()
     {
         return Boolean.valueOf(false);
