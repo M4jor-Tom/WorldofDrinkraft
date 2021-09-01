@@ -30,6 +30,11 @@ public class Player
         setDrinker(drinker);
     }
 
+    final private Boolean isDrinkingValid()
+    {
+        return isDrinker() || !getRole().isDrinkerOnlyRole();
+    }
+
     @NonNull
     final public Boolean isUnique()
     {
