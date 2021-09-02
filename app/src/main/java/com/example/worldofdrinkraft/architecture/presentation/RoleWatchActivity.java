@@ -1,5 +1,6 @@
 package com.example.worldofdrinkraft.architecture.presentation;
 
+import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.util.Log;
 import android.widget.TextView;
@@ -12,6 +13,7 @@ import com.example.worldofdrinkraft.role.RoleFactory;
 
 public class RoleWatchActivity extends AppCompatActivity
 {
+    @SuppressLint("SetTextI18n")
     @Override
     protected void onCreate(Bundle savedInstanceState)
     {
@@ -20,6 +22,7 @@ public class RoleWatchActivity extends AppCompatActivity
 
         TextView roleLabelTextView = (TextView)findViewById(R.id.watch_role_label);
         TextView roleRuleTextView = (TextView)findViewById(R.id.watch_role_rule);
+        TextView roleMinimumAdvisedInGamePlayerCount = (TextView)findViewById(R.id.watch_role_minimum_advised_in_game_player_count);
         TextView roleIsUniqueTextView = (TextView)findViewById(R.id.watch_role_is_unique);
         TextView roleIsInGroupTextView = (TextView)findViewById(R.id.watch_role_is_in_group);
 
@@ -31,6 +34,11 @@ public class RoleWatchActivity extends AppCompatActivity
 
                 roleLabelTextView.setText(role.getLabel());
                 roleRuleTextView.setText(role.getRule());
+                roleMinimumAdvisedInGamePlayerCount.setText(
+                        roleMinimumAdvisedInGamePlayerCount.getText()
+                        + ": "
+                        + role.getMinimumAdvisedInGamePlayerCount()
+                );
 
                 if(role.isNormallyUnique())
                     roleIsUniqueTextView.setText(R.string.unique_role_text);

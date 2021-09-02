@@ -19,6 +19,14 @@
     </TextView>
 
     <TextView
+        android:id="@+id/watch_role_minimum_advised_in_game_player_count"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/watch_role_minimum_advised_in_game_player_count">
+
+    </TextView>
+
+    <TextView
         android:id="@+id/watch_role_is_unique"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">

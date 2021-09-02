@@ -15,4 +15,5 @@
     <string name="main_button_gamemode_selection">Gamemode</string>
     <string name="player_setup_drinker_checkbox">drinks: </string>
     <string name="main_button_start_game">Start game</string>
+    <string name="watch_role_minimum_advised_in_game_player_count">Role can be played when players are</string>
 </resources>

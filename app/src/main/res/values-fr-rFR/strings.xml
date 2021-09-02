@@ -16,4 +16,5 @@
     <string name="main_button_gamemode_selection">Mode de jeu</string>
     <string name="player_setup_drinker_checkbox">boit: </string>
     <string name="main_button_start_game">Jouer</string>
+    <string name="watch_role_minimum_advised_in_game_player_count">Ce rôle peut être joué quand les joueurs sont</string>
 </resources>
