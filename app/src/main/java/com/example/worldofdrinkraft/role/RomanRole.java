@@ -27,7 +27,7 @@ public class RomanRole extends AbstractRole
     }
 
     @Override
-    public Integer getAdvisedMinimumInGamePlayerCount()
+    public Integer getMinimumAdvisedInGamePlayerCount()
     {
         return 8;
     }
