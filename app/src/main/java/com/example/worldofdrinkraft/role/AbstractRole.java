@@ -82,16 +82,11 @@ abstract public class AbstractRole
     @Nullable
     final public String getRule()
     {
-        switch(LanguageManager.getInstance().getLanguage())
-        {
-            case ENGLISH:
-                return getEnglishRule();
+        Map<Language, String> ruleMap = new HashMap<>();
 
-            case FRENCH:
-                return getFrenchRule();
-        }
+        ruleMap.put(Language.ENGLISH, getEnglishRule());
+        ruleMap.put(Language.FRENCH, getFrenchRule());
 
-        Log.e("AbstractRole::rule", LanguageManager.UNSET_LANGUAGE_ERROR_MESSAGE);
-        return null;
+        return (new MultiLanguageString(ruleMap)).toString();
     }
 }
