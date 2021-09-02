@@ -15,4 +15,5 @@
     <string name="freepik_attribution_text">(Icon credit) Birthday vector created by rawpixel.com - fr.freepik.com</string>
     <string name="main_button_gamemode_selection">Mode de jeu</string>
     <string name="player_setup_drinker_checkbox">boit: </string>
+    <string name="main_button_start_game">Jouer</string>
 </resources>

@@ -20,6 +20,7 @@ public class MainActivity extends AppCompatActivity
         MaterialButton gamemodeSelectionButton = (MaterialButton)findViewById(R.id.main_button_gamemode_selection);
         MaterialButton playerListSetupButton = (MaterialButton)findViewById(R.id.main_button_players);
         MaterialButton roleListButton = (MaterialButton)findViewById(R.id.main_button_roles);
+        MaterialButton startGameButton = (MaterialButton)findViewById(R.id.main_button_start_game);
 
         gamemodeSelectionButton.setOnClickListener(
                 new View.OnClickListener()
