@@ -71,17 +71,12 @@ abstract public class AbstractRole
     @NonNull
     final public String getLabel()
     {
-        switch(LanguageManager.getInstance().getLanguage())
-        {
-            case ENGLISH:
-                return getEnglishLabel();
+        Map<Language, String> labelMap = new HashMap<>();
 
-            case FRENCH:
-                return getFrenchLabel();
-        }
+        labelMap.put(Language.ENGLISH, getEnglishLabel());
+        labelMap.put(Language.FRENCH, getFrenchLabel());
 
-        Log.e("AbstractRole::label", LanguageManager.UNSET_LANGUAGE_ERROR_MESSAGE);
-        return LanguageManager.UNSET_LANGUAGE_ERROR_MESSAGE;
+        return (new MultiLanguageString(labelMap)).toString();
     }
 
     @Nullable
