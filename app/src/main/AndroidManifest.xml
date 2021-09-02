@@ -40,6 +40,11 @@
             android:label="@string/gamemode_selection_label">
 
         </activity>
+
+        <activity
+            android:name=".architecture.presentation.EventsSwipeActivity">
+
+        </activity>
     </application>
 
 </manifest>

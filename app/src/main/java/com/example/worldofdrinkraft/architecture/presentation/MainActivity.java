@@ -68,5 +68,21 @@ public class MainActivity extends AppCompatActivity
                     }
                 }
         );
+
+        startGameButton.setOnClickListener(
+                new View.OnClickListener()
+                {
+                    @Override
+                    public void onClick(View v)
+                    {
+                        Intent startGameIntent = new Intent(
+                                MainActivity.this,
+                                EventsSwipeActivity.class
+                        );
+
+                        startActivity(startGameIntent);
+                    }
+                }
+        );
     }
 }
