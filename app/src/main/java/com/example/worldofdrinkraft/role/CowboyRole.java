@@ -27,6 +27,12 @@ public class CowboyRole extends AbstractRole
     }
 
     @Override
+    public Integer getAdvisedMinimumInGamePlayerCount()
+    {
+        return 2;
+    }
+
+    @Override
     protected String getEnglishLabel()
     {
         return "cowboy";

@@ -27,6 +27,12 @@ public class SadisticMasochistRole extends AbstractRole
     }
 
     @Override
+    public Integer getAdvisedMinimumInGamePlayerCount()
+    {
+        return 3;
+    }
+
+    @Override
     protected String getEnglishLabel()
     {
         return "sadistic masochist";

@@ -27,6 +27,12 @@ public class GypsyRole extends AbstractRole
     }
 
     @Override
+    public Integer getAdvisedMinimumInGamePlayerCount()
+    {
+        return 6;
+    }
+
+    @Override
     protected String getEnglishLabel()
     {
         return "gypsy";

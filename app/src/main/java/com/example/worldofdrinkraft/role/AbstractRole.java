@@ -24,6 +24,8 @@ abstract public class AbstractRole
 
     abstract public Boolean isNormallyInGroup();
 
+    abstract public Integer getAdvisedMinimumInGamePlayerCount();
+
     abstract protected String getEnglishLabel();
     abstract protected String getFrenchLabel();
 

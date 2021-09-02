@@ -27,6 +27,12 @@ public class RomanRole extends AbstractRole
     }
 
     @Override
+    public Integer getAdvisedMinimumInGamePlayerCount()
+    {
+        return 8;
+    }
+
+    @Override
     protected String getEnglishLabel()
     {
         return "roman";

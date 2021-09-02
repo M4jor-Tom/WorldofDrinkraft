@@ -27,6 +27,12 @@ public class FreezerRole extends AbstractRole
     }
 
     @Override
+    public Integer getAdvisedMinimumInGamePlayerCount()
+    {
+        return 4;
+    }
+
+    @Override
     protected String getEnglishLabel()
     {
         return "freezer";
