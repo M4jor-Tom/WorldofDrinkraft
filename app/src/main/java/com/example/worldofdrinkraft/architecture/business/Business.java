@@ -123,21 +123,21 @@ public class Business implements IBusiness
             {
                 //Can randomize limitless among count constraintless roles
                 for (Player player : getPlayerList())
-                    player.setRole(RoleFactory.getRandomCountConstraintlessRole());
+                    player.setRole(RoleFactory.getRandomRole(x -> !x.hasCountConstraint()));
 
                 if(getPlayerCount() <= PLAYER_CONSTRAINTLESS_PER_UNIQUE + 1)
                 {
                     //Giving an unique role to a random player
                     getPlayerList().get(
                             _random.nextInt(getPlayerCount())
-                    ).setRole(RoleFactory.getRandomUniqueRole());
+                    ).setRole(RoleFactory.getRandomRole(AbstractRole::isNormallyUnique));
                 }
                 else if (getPlayerCount() <= PLAYER_CONSTRAINTLESS_PER_UNIQUE + PLAYER_MINIMUM_GROUP_SIZE)
                 {
                     //PLAYER_CONSTRAINTLESS_PER_UNIQUE < Players count < PLAYER_MINIMUM_GROUP_SIZE
 
                     //Can randomize with 1 group and count constraintless roles
-                    AbstractRole inGroupRole = RoleFactory.getRandomInGroupRole();
+                    AbstractRole inGroupRole = RoleFactory.getRandomRole(AbstractRole::isNormallyInGroup);
 
                     //Giving the inGroup role to the 2 firsts players in the list
                     int i = 0;

@@ -7,7 +7,10 @@ import androidx.annotation.Nullable;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 import java.util.Random;
+import java.util.function.Predicate;
+import java.util.stream.Collectors;
 
 public class RoleFactory
 {
@@ -27,32 +30,20 @@ public class RoleFactory
 
     public static AbstractRole getRandomRole()
     {
-        return RoleFactory.getRoleByType(RoleType.randomRoleType());
+        return getRandomRole(Objects::nonNull);
     }
 
-    public static AbstractRole getRandomCountConstraintlessRole()
+    public static AbstractRole getRandomRole(Predicate<? super AbstractRole> filterStatement)
     {
-        return getCountConstraintlessRoleList().get(
-                _random.nextInt(
-                        getCountConstraintlessRoleList().size()
-                )
-        );
-    }
+        List<AbstractRole> filteredList = getAllRoles()
+                .stream()
+                .filter(filterStatement)
+                .collect(Collectors.toList());
 
-    public static AbstractRole getRandomUniqueRole()
-    {
-        return getUniqueRoleList().get(
+        return filteredList
+                .get(
                 _random.nextInt(
-                        getUniqueRoleList().size()
-                )
-        );
-    }
-
-    public static AbstractRole getRandomInGroupRole()
-    {
-        return getInGroupRoleList().get(
-                _random.nextInt(
-                        getInGroupRoleList().size()
+                        filteredList.size()
                 )
         );
     }
@@ -74,42 +65,6 @@ public class RoleFactory
         }
 
         return getRoleList();
-    }
-
-    @NonNull
-    public static List<AbstractRole> getCountConstraintlessRoleList()
-    {
-        List<AbstractRole> countConstraintlessRoleList = new ArrayList<>();
-
-        for(AbstractRole role: getAllRoles())
-            if(!role.hasCountConstraint())
-                countConstraintlessRoleList.add(role);
-
-        return countConstraintlessRoleList;
-    }
-
-    @NonNull
-    public static List<AbstractRole> getUniqueRoleList()
-    {
-        List<AbstractRole> uniqueRoleList = new ArrayList<>();
-
-        for(AbstractRole role: getAllRoles())
-            if(role.isNormallyUnique())
-                uniqueRoleList.add(role);
-
-        return uniqueRoleList;
-    }
-
-    @NonNull
-    public static List<AbstractRole> getInGroupRoleList()
-    {
-        List<AbstractRole> groupRoleList = new ArrayList<>();
-
-        for(AbstractRole role: getAllRoles())
-            if(role.isNormallyInGroup())
-                groupRoleList.add(role);
-
-        return groupRoleList;
     }
 
     private static void setRoleList(List<AbstractRole> roleList)
